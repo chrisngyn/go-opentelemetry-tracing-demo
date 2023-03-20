@@ -1,0 +1,35 @@
+openapi: "3.0.2"
+info:
+  title: Service 1
+  version: "1.0"
+servers:
+  - url: http://{hostname}/api
+    description: Local server
+    variables:
+      hostname:
+        default: localhost:8080
+  - url: https://{hostname}/api
+    description: Secure HTTP Server
+    variables:
+      hostname:
+        default: localhost
+
+paths:
+  /something:
+    get:
+      operationId: getSomething
+      description: get something
+      responses:
+        200:
+          description: success response
+          content:
+            application/json:
+              schema:
+                title: GetSomethingResponse
+                type: object
+                properties:
+                  value:
+                    type: string
+                required:
+                  - value
+

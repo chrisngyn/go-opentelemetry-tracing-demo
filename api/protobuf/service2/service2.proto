@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "github.com/chiennguyen196/go-opentelemetry-tracing-demo/pkg/service2";
+
+service ExampleService {
+  rpc GetSomething(GetSomethingRequest) returns (GetSomethingResponse) {}
+}
+
+message GetSomethingRequest {
+
+}
+
+message GetSomethingResponse {
+  string value = 1;
+}

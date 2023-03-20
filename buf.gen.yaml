@@ -1,0 +1,13 @@
+version: v1
+plugins:
+  - plugin: go
+    out: pkg/genproto
+    opt: paths=source_relative
+  - name: go-grpc-mock
+    out: pkg/genproto
+    opt: paths=source_relative
+  - plugin: go-grpc
+    out: pkg/genproto
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
